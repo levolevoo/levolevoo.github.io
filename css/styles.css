@@ -1,0 +1,168 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {
+  width: auto;
+  border-bottom: 5px solid #47c9af;
+  font-family:  inherit;
+  line-height: 1;
+}
+#cssmenu ul {
+  
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 20px 30px 10px 30px;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #444444;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #47c9af;
+}
+#sonuc
+{
+  width: 100%;
+  margin-top: 50px;
+}
+#satir1
+{
+  width: 250px;
+  max-width: 250px;
+}
+#satir2
+{
+  width: 300px;
+  max-width: 300px;
+}
+#onay1
+{
+  width: 100px;
+}
+#onay2
+{
+  width: 100px;
+}
+#onay3
+{
+  width: 100px;
+}
+#onay4
+{
+  width: 70px;
+}
+#sil
+{
+  float : right;
+  margin-right: 20px;
+}
+#check1{
+width: 100px;
+}
+#check2{
+  width: 100px;
+}
+#check3{
+  width: 100px;
+}
+.checkorta{
+  margin-left:50px;
+}
+.lblorta{
+  margin-top:20px;
+}
+#adsoyad{
+margin-top:50px;
+}
+.footer{
+  margin-bottom: 50px;
+}
+#bilgi{
+margin-top : 10px;
+}
+.giris{
+  width:32%;
+}
+.girr{
+  /*background-color: #757575*/
+  background: url(../img/survey.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

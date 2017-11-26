@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AnketTik</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="gir" class="girr">
+    
+    <div class="container"  >
+        <div class="row">
+            <div class="col-md-12">
+                <div id='cssmenu'>
+                    <ul>
+                       <li class='active' id="buyuk" ><a href='#' id="buyu">AnketTik</a></li>
+                       
+                       
+                    </ul>
+                    </div>
+                </div>
+                
+                <div id="girisForm" class="alert alert-info giris" >
+                        <center><h2>AnketTik</h2>
+                            <h2>Anket Hazırlama Portalı</h2></center>
+                        <label class="lblorta default">Kullanıcı Adı</label>
+                        <input type="text" class="form-control text" id="kullaniciadi">
+                        <label class="lblorta">Parola</label>
+                        <input type="password" class="form-control text"  id="parola">
+                        <br>
+                        <div id="girisUyari"></div>
+                        <br>
+                        <center>
+                        <button class="btn btn-primary" id="btnGiris"> Giriş Yap</button>
+                        <button class="btn btn-warning" id="btnTemiz"> Temizle</button>
+                    </center>
+                    </div>
+                    <div class="col-md-12">
+                            
+                    </div>
+                
+<!-- 1. kolon veri girişi -->
+<div class="col-md-4" id="solkolon">
+    
+    <div class="anketbas" id="anketForm" style="margin-top:70px;"><h1>Anket Hazırlama</h1>
+    <label class="lblorta" id="lblSoru"> Soru Ekle </label>
+    <input id="txtSoru" type="text" class="form-control " placeholder="Anket Sorunuz" onfocus=" this.value='';" >
+    <label id="bilgi">Soru Eklediğinizde Tabloya Otomatik Olarak Eklenecektir..</label>
+    <div id="form1">
+    <label class="lblorta" id="lblo1">1. Onay Kutusu İçin </label>
+    <input id="txtOnay1" type="text" class="form-control " placeholder="Sorulan Anket Sorusu için 1. Cevabınız"  onfocus=" this.value='';">
+    <label class="lblorta" id="lblo2">2. Onay Kutusu İçin</label>
+    <input id="txtOnay2" type="text" class="form-control " placeholder="Sorulan Anket Sorusu için 2. Cevabınız"  onfocus=" this.value='';"> 
+    <label class="lblorta" id="lblo3">3. Onay Kutusu İçin</label>
+    <input id="txtOnay3" type="text" class="form-control " placeholder="Sorulan Anket Sorusu için 3. Cevabınız"  onfocus=" this.value='';"> 
+    <label class="lblorta" id="lblo4">Anketi Göndermek İçin Oluşturulan Buton'a İsim Verme</label>
+    <input id="txtBtn" type="text" class="form-control " placeholder="Boş Geçerseniz Standart 'Gönder' Yazılır."  onfocus=" this.value='';">
+
+    
+ <br>
+ 
+ 
+    <label class="lblorta">Ad Soyad Girişi Olsun Mu?</label>
+   <div class="button-checkbox checkorta">
+        <button type="button" class="btn " data-color="success" id="tik1"></button>
+            <input type="checkbox" class="hidden" id="check1" name="adSoyad"/>
+</div>
+
+    <label class="lblorta">Doğum Tarihi Olsun Mu?</label>
+    <div class="button-checkbox checkorta">
+        <button type="button" class="btn" data-color="success"  id="tik2"></button>
+            <input type="checkbox" class="hidden" id="check2" name="dogTar"/>
+    </div>
+
+    <label class="lblorta">Ek Yorum Alanı Oluşturulsun Mu?</label>
+    <div class="button-checkbox checkorta">
+            <button type="button" class="btn" data-color="success"  id="tik3"></button>
+                <input type="checkbox" class="hidden" id="check3" name="mesaj"/>
+        </div>
+    <br>
+    <button id="btnKaydet" class="btn btn-primary">Anket Ekle</button>
+    <button class="btn btn-warning btnTemizle" id="temizle1" >Temizle</button>
+</div>
+
+<br>
+<div>
+    <button id="btnSoru" class="btn btn-success" >Soru Ekle</button> 
+    <button class="btn btn-danger" id="btniptal" onClick="window.location.reload(false)" >İptal</button>
+    <button class="btn btn-warning btnTemizle" id="temizle2" >Temizle</button>
+</div>
+    
+    <div id="survey2">
+        <center>
+        <img src="img/survey2.png" style="margin-top:50px;">
+    </center>
+    </div>
+
+    </div>
+    
+</div>
+<!-- 2. kolon veri çıktısı -->
+<div class="col-md-8" id="sagkolon"> 
+    <div id="survey">
+        
+    <img src="img/survey.png" >
+
+</div>
+    <div id="adsoyad"> <!-- ad soyad -->
+        <label class="lblorta">Adınız</label>
+        <input type="text" class="form-control" onfocus="this.value='';" id="txtAd">
+        <label class="lblorta">Soyadınız</label>
+        <input type="text" class="form-control" onfocus="this.value='';" id="txtSoyad">
+    </div>
+    <br>
+    <div id="dogtar"><!-- doğum tarihi -->
+            <label class="lblorta">Doğum Tarihiniz</label>
+            <input type="date" class="form-control" style="width:250px;" id="txtDogtar">           
+    </div>
+    <br>
+    <div id="sonuc"> </div> <!-- tablo başlığı -->
+    <div id="sonuc2"> </div> <!-- tablo içeriği -->
+    <div>
+        <table id="table1" class="table table-hover"> 
+<tr></tr>
+        </table>
+        <div id="mesajı"><!-- ek mesaj -->
+            <label class="lblorta">Son Olarak Eklemek İstediğiniz Birşey Var Mı?</label>
+    <textarea class="form-control" rows="5" placeholder="Mesajınız" style="max-width:800px;" id="txtMesaj" onfocus=" this.value='';"></textarea>
+    <br>
+    
+    </div>
+    <br>
+    <button class="btn btn-success " style="float:right;" id="btnGonder"><div id="txtBtn2"> </div></button>
+    </div>
+    <div id="anketuyari1"></div> <!-- boş giriş yapıldığında uyarı veren kısım -->
+
+
+    
+</div>
+
+
+</div><!-- row son-->
+
+
+    </div>
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+    $(function () {
+        $("#girisForm").css({
+            "width": "30%",
+            "position": "fixed",
+            "top": "-500px",
+            "left": "35%",
+            "right":"35%"
+            
+        })
+
+        $(document).ready(function(){ //ekranın yüklenme olayı
+            $("#girisForm").animate({
+                "top": "150px",
+                "left": "35%"
+        },1000)
+        $("#kullaniciadi").val("");
+        $("#parola").val("");
+        })
+       
+        $("#btnGiris").click(function(){
+            var giris = $("#kullaniciadi").val();
+            var parola = $("#parola").val();
+                 
+            if( giris == "admin" )
+            {   
+                if(parola == "123")
+                {
+
+        $("#girisForm").animate({
+            "top": "-500px",
+            "left": "35%",
+            "opacity":"0.0"
+        },1000)
+
+        $("#btnGonder").css({
+            "display":"none"
+        })
+        $("#solkolon").css({
+            "display":"inline-block",
+            "opacity":"0.0"
+        })
+        $("#sagkolon").css({
+            "display":"inline-block",
+            "opacity":"0.0"
+        })
+        $("#solkolon").animate({
+            "opacity":"1.0"
+        },1000)
+        $("#sagkolon").animate({
+            "opacity":"1.0"
+        },1000)
+
+        $("#gir").css({
+            "background-color":"#fff"
+        })
+
+       /* $("#gir").css({
+            "background":"url(../);"
+        })*/
+
+        $("#gir").removeClass();
+
+                }
+                else
+                {
+                    $("#girisUyari").fadeIn(100);
+                    $("#girisUyari").html("Kullanıcı Adı veya Parola Hatalı!");
+          $("#girisForm").removeClass();
+          $("#girisForm").addClass("alert alert-danger");
+          $("#girisForm").fadeOut(150);
+          $("#girisForm").fadeIn(150);
+                }
+            }
+            else
+            {
+                $("#girisUyari").fadeIn(100);
+                $("#girisUyari").html("Kullanıcı Adı veya Parola Hatalı!");
+          $("#girisForm").removeClass();
+          $("#girisForm").addClass("alert alert-danger");
+          $("#girisForm").fadeOut(150);
+          $("#girisForm").fadeIn(150);
+            }
+          
+        })
+
+        
+        $("#btnTemiz").click(function(){
+            $("#kullaniciadi").val("");
+            $("#parola").val("");
+
+        })
+
+        
+
+        $("#survey2").css({
+            "display":"none"
+        })
+        $("#solkolon").css({
+            "display":"none"
+        })
+        $("#sagkolon").css({
+            "display":"none"
+        })
+
+        $("#bilgi").css({
+            "display":"none"
+        })
+        $("#btniptal").css({
+            "display":"none"
+        })
+
+        $("#sonuc").css({
+            "display":"none" 
+        })
+
+        $("#sonuc2").css({
+            "display":"none" 
+        })
+
+        $("#adsoyad").css({
+            "display":"none" 
+        })
+        $("#dogtar").css({
+            "display":"none"
+        })
+        $("#mesajı").css({
+            "display":"none"
+        })
+        $("#temizle2").css({
+            "display":"none"
+        })
+       
+        $("#check1").prop('checked' , false)
+        $("#check2").prop('checked' , false)
+        $("#check3").prop('checked' , false)
+        $("#check4").prop('checked' , false)
+        $("#txtSoru").val('');
+        $("#txtOnay1").val('');
+        $("#txtOnay2").val('');
+        $("#txtOnay3").val('');
+        $("#txtAd").val('');
+        $("#txtSoyad").val('');
+        $("#txtDogtar").val('');
+        $("#txtMesaj").val('');
+        $("#txtBtn").val('');
+
+      $("#btnSoru").css({
+          "display":"none"
+      })
+
+
+
+$(".btnTemizle").click(function(){
+    
+        $("#check1").prop('checked' , false)
+        $("#check2").prop('checked' , false)
+        $("#check3").prop('checked' , false)
+        $("#check4").prop('checked' , false)
+        $("#txtSoru").val('');
+        $("#txtOnay1").val('');
+        $("#txtOnay2").val('');
+        $("#txtOnay3").val('');
+        $("#txtAd").val('');
+        $("#txtSoyad").val('');
+        $("#txtDogtar").val('');
+        $("#txtMesaj").val('');
+        $("#txtBtn").val('');
+
+})
+
+
+
+
+var kayitlar = [];
+
+      $("#btnKaydet").click(function () {
+
+        var soru = $("#txtSoru").val();
+        var o1 = $("#txtOnay1").val();
+        var o2 = $("#txtOnay2").val();
+        var o3 = $("#txtOnay3").val();
+
+
+        if (soru == "" || o1 == "" || o2 == "" || o3 == "" ) {
+            alert("Lütfen Tüm Alanları Doldurunuz!")
+          return false;
+        }
+
+        var veri = new Object();
+        veri["soru"] = soru;
+        veri["o1"] = o1;
+        veri["o2"] = o2;
+        veri["o3"] = o3;
+        kayitlar.push(veri);
+
+
+        console.log(JSON.stringify(kayitlar));
+        $.sonucYaz();
+      });
+
+      $.sonucYaz = function () {
+        var tb = "<table class='table' ><tr class='bg-primary'>";
+        $.each(kayitlar, function (i, kayit) {
+
+          tb += "<td id='satir1'>Soru</td><td id='onay1' align='center'>" + kayit.o1 + "</td><td id='onay2' align='center'>" + kayit.o2 + "</td><td id='onay3' align='center'>" + kayit.o3 + "</td><td id='onay4'></td></tr>";
+        });
+        tb += "</table>";
+
+        $("#sonuc").html(tb);
+
+        var soruu = $("#txtSoru").val();
+        
+        if (soruu == "") {
+          alert("Soru Yazınız!");
+          return false;
+        }
+        $("#table1").append("<tr class='bg-info'><td id='satir2'>" + soruu + "</td><td><input type='checkbox' name='c1' id='check1'></td><td><input type='checkbox' name='c2' id='check2' ></td><td><input type='checkbox' name='c3' id='check3' ></td><td><button class='btn btn-danger sill' id='sil'>Sil</button></td></tr>");
+        
+        $(document).on("click", ".sill", function () {
+        var satir = $(this).closest("tr");
+        satir.remove();
+        })
+        $("#survey").fadeOut(1000);
+
+       
+
+        $("#sonuc").css({
+            "display":"inherit" 
+        })
+        $("#sonuc").css({
+            "opacity":"0.0" 
+        })
+        $("#sonuc").animate({
+            "opacity":"1.0" 
+        })
+        $("#sonuc2").css({
+            "display":"inherit" 
+        })
+        $("#sonuc2").css({
+            "opacity":"0.0" 
+        })
+        $("#sonuc2").animate({
+            "opacity":"1.0" 
+        })
+        $("#bilgi").css({
+            "display":"inline-block"
+        })
+        $("#btnGonder").css({
+            "display":"inherit" 
+        })
+        $("#btnGonder").css({
+            "opacity":"0.0" 
+        })
+        $("#btnGonder").animate({
+            "opacity":"1.0" 
+        })
+        $("#survey2").css({
+            "display":"inherit" 
+        })
+        $("#survey2").css({
+            "opacity":"0.0" 
+        })
+        $("#survey2").animate({
+            "opacity":"1.0" 
+        })
+        
+
+
+      $("#btnSoru").css({
+          "display":"inline"
+      })
+      $("#temizle2").css({
+          "display":"inline-block"
+      })
+      $("#txtSoru").css({
+    "display":"inherit"
+})
+$("#lblSoru").css({
+    "display":"inherit"
+})
+$("#btniptal").css({
+    "display":"inline"
+})
+$("#form1").fadeOut(1000);
+
+$("#btnTemizle").fadeIn(1000);
+
+        if ($("#check1").prop('checked'))
+        {
+    $("#adsoyad").css({
+        "display":"inherit"
+    })
+    $("#adsoyad").css({
+        "opacity":"0.0"
+    })
+    $("#adsoyad").animate({
+        "opacity":"1.0"
+    },1000)
+        }
+
+        if ($("#check2").prop('checked'))
+        {
+    $("#dogtar").css({
+        "display":"inherit"
+    })
+    $("#dogtar").css({
+        "opacity":"0.0"
+    })
+    $("#dogtar").animate({
+        "opacity":"1.0"
+    },1000)
+        }
+
+        if ($("#check3").prop('checked'))
+        {
+    $("#mesajı").css({
+        "display":"inherit"
+    })
+    $("#mesajı").css({
+        "opacity":"0.0"
+    })
+    $("#mesajı").animate({
+        "opacity":"1.0"
+    },1000)
+        }
+        var deger = $("#txtBtn").val();
+        
+        if (deger == "")
+        {
+            $("#txtBtn2").html("Gönder"); 
+        }
+        else{
+        $("#txtBtn2").html(deger);    
+        } 
+
+     
+        $("#check1").prop('checked' , false)
+        $("#check2").prop('checked' , false)
+        $("#check3").prop('checked' , false)
+        $("#check4").prop('checked' , false)
+        $("#txtSoru").val('');
+        $("#txtOnay1").val('');
+        $("#txtOnay2").val('');
+        $("#txtOnay3").val('');
+        $("#txtAd").val('');
+        $("#txtSoyad").val('');
+        $("#txtDogtar").val('');
+        $("#txtMesaj").val('');
+        $("#txtBtn").val('');
+   
+    };
+    
+        var f = $("#kullaniciadi").focus(function(){
+            $("#girisUyari").fadeOut(100);
+          $("#girisForm").removeClass();
+          $("#girisForm").addClass("alert alert-info");
+          $("#girisForm").fadeOut(100);
+          $("#girisForm").fadeIn(100);
+          
+        });
+        
+           
+          
+        
+            
+
+
+
+/* 2. tablo */
+
+
+
+      $("#btnSoru").click(function () {
+        
+
+        var soru = $("#txtSoru").val();
+        var o1 = $("#txtOnay1").val();
+        var o2 = $("#txtOnay2").val();
+        var o3 = $("#txtOnay3").val();
+        
+
+
+        if (soru == "") {
+          alert("Soru Yazınız!");
+          return false;
+        }
+        $("#table1").append("<tr class='bg-info'><td id='satir2'>" + soru + "</td><td><input type='checkbox' name='c1' id='check1'></td><td><input type='checkbox' name='c2' id='check2' ></td><td><input type='checkbox' name='c3' id='check3' ></td><td><button class='btn btn-danger sill' id='sil'>Sil</button></td></tr>");
+
+        
+        
+        $(document).on("click", ".sill", function () {
+        var satir = $(this).closest("tr");
+        satir.remove();
+        })
+        
+        $("#check1").prop('checked' , false)
+        $("#check2").prop('checked' , false)
+        $("#check3").prop('checked' , false)
+        $("#check4").prop('checked' , false)
+        $("#txtSoru").val('');
+        $("#txtOnay1").val('');
+        $("#txtOnay2").val('');
+        $("#txtOnay3").val('');
+        $("#txtAd").val('');
+        $("#txtSoyad").val('');
+        $("#txtDogtar").val('');
+        $("#txtMesaj").val('');
+        $("#txtBtn").val('');
+        $("#bilgi").css({
+            "display":"none"
+        })
+
+
+
+        
+    });
+
+/* checbox tema */
+
+    $('.button-checkbox').each(function () {
+
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color );
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color )
+                    .addClass('btn-default');
+            }
+        }
+
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($button.find('.state-icon').length == 0) {
+                $button.prepend('<i  class="state-icon ' + settings[$button.data('state')].icon + ' a "></i> '); // "i"butonun içinde tik in simgesi "id"olarak "a"dedim 
+            
+            }
+        }
+        init();
+    });
+
+
+});
+        
+    
+  </script>
+  <footer>
+      <div class="footer">
+
+      </div>
+  </footer>
+
+</body>
+</html>
